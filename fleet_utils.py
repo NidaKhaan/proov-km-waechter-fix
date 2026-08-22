@@ -3,17 +3,17 @@
 # nur nicht, es zu loeschen. (Catch-all helpers since 2013. Much of this is unused -- we just
 # never dared to delete anything.)
 
-MILES_PER_KM = 1.609                    # stimmt das so? (is that right?)
+KM_TO_MILES = 0.621371                  # 1 km = 0.621371 miles (was 1.609, which is miles→km)
 
 
-def km_to_miles(km):
-    # Hinweis: wird vom Nachtlauf fuer den UK-Partnerbericht gebraucht. Nicht anfassen!
-    # (Note: the nightly run needs this for the UK partner report. Do not touch!)
-    return km * MILES_PER_KM
+def km_to_miles(km: float) -> float:
+    """Convert kilometres to miles. Used by the nightly UK partner report."""
+    return km * KM_TO_MILES
 
 
-def format_number(value):
-    return "%.1f" % value
+def format_number(value: float) -> str:
+    """Format a number to one decimal place."""
+    return f"{value:.1f}"
 
 
 def format_percent(value):
